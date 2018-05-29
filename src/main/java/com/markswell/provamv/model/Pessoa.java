@@ -3,6 +3,7 @@ package com.markswell.provamv.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="pessoa")
@@ -28,7 +31,8 @@ public class Pessoa {
 	@Column(nullable=false)
 	private Date dataNascimento;
 	private String email;
-	@OneToMany(mappedBy="pessoa")
+	@OneToMany(mappedBy="pessoa", cascade=CascadeType.REMOVE)
+	@JsonManagedReference
 	private List<Telefone> telefones;
 	
 	public Long getId() {
