@@ -2,9 +2,7 @@ package com.markswell.provamv.controller;
 
 import java.net.URI;
 import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,8 +53,8 @@ public class PessoaController {
 	}
 	@CrossOrigin(origins= {"http://localhost:4200"})
 	@GetMapping("/cpf/{cpf}")
-	public ResponseEntity<Pessoa> getPessoaByCpf(@PathVariable String cpf){
-		Pessoa pessoa = services.findByCpf(cpf);
+	public ResponseEntity<List<Pessoa>> getPessoaByCpf(@PathVariable String cpf){
+		List<Pessoa> pessoa = services.findByCpf(cpf);
 		return pessoa != null ? ResponseEntity.ok(pessoa) : ResponseEntity.noContent().build() ;
 	}
 	@CrossOrigin(origins= {"http://localhost:4200"})

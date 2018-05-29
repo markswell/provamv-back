@@ -35,7 +35,7 @@ public class PessoaServices {
 		return pessoa; 
 	}
 
-	public Pessoa findByCpf(String cpf) {
+	public List<Pessoa> findByCpf(String cpf) {
 		return rep.getByCpf(cpf);
 	}
 	
@@ -61,7 +61,7 @@ public class PessoaServices {
 	public Pessoa atualizar(Long id,Pessoa pessoa) {
 		Pessoa salvar = findById(id);
 		BeanUtils.copyProperties(pessoa, salvar, "id");
-		return rep.save(salvar);
+		return save(salvar);
 		
 	}
 

@@ -20,9 +20,9 @@ public class PessoaRepositoyImpl implements PessoaRepositoyQuery {
 	}
 
 	@Override
-	public Pessoa getByCpf(String cpf) {
+	public List<Pessoa> getByCpf(String cpf) {
 		Query query = manager.createQuery("select p from Pessoa p where p.cpf like :arg", Pessoa.class).setParameter("arg", cpf);
-		return (Pessoa) query.getSingleResult();
+		return query.getResultList();
 	}
 
 }
