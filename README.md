@@ -1,8 +1,16 @@
-#provamv-back
+# provamv-back
 
-Baixar projeto no seu workspace<br/>
-Instalar Postgresql na no servidor<br/>
-Criar o banco provamv<br/>
-Alterar arquivo /src/main/resources/application.properties com:<br/>
-spring.datasource.username=seu usuário do banco<br/>
-spring.datasource.password=sua senha do banco<br/>
+> API backend para ser usado em cadastro de pessoas e telefones
+
+- [Front-end](https://github.com/markswell/provamv-front)
+
+## How to install?
+
+- Clonar este projeto 
+- Instalar Postgresql na no servidor
+- Criar o banco provamv
+- Alterar arquivo /src/main/resources/application.properties com:
+  - spring.datasource.username=seu usuário do banco
+  - spring.datasource.password=sua senha do banco
+
+
